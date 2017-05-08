@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Заголовок</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fonts.min.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+	<div class="fix-elements">
+		<div class="zest"><p>zest<br>le zeste<br>la scorza</p></div>
+		<div class="menu" id="menu">
+			<ul>
+				<li><a href="#">Works</a></li>
+				<li><a href="#">About</a></li>
+				<li class="menu-img"><a class="menu-icon"  href="#">Menu</a>
+					<ul class="submenu">
+						<li><a href="#screen-1">Screen-1</a></li>
+						<li><a href="#screen-2">Screen-2</a></li>
+						<li><a href="#screen-3">Screen-3</a></li>
+						<li><a href="#screen-4">Screen-4</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="copy"><p>Copyright © 2016 All rights reserved</p></div>
+		<div class="prew-next-contact">
+			<p><a href="#">Preview</a><span>/</span><a href="#">Next</a></p>
+			<p>Contact: contact@zest.com</p>
+		</div>
+	</div>
+	<div id="screen-1" class="screen screen1" >
+		<div class="screen-text-promo" data-parallax="scroll" data-image-src="img/screen-1-bg.jpg">
+			<div class="text-left">
+				<h2>Tender</h2>				
+			</div>
+			<div class="text-center">
+				<h2>The Zephirest</h2>				
+			</div>
+			<div class="text-right">
+				<h2>Evangelism</h2>				
+			</div>
+		</div>
+	</div>
+	<div id="screen-2" class="screen screen2">
+		<div class="screen-text-promo" data-parallax="scroll" data-image-src="img/screen-2-bg.jpg">
+			<div class="text-left">
+				<h2>Zest</h2>				
+			</div>
+			<div class="text-center">
+				<h2>The Evangelism</h2>				
+			</div>
+			<div class="text-right">
+				<h2>Superstition</h2>				
+			</div>
+		</div>
+	</div>
+	<div id="screen-3" class="screen screen3">
+		<div class="screen-text-promo" data-parallax="scroll" data-image-src="img/screen-3-bg.jpg">
+			<div class="text-left">
+				<h2>Evangelism</h2>				
+			</div>
+			<div class="text-center">
+				<h2>The Superstition</h2>				
+			</div>
+			<div class="text-right">
+				<h2>Tender</h2>				
+			</div>
+		</div>
+	</div>
+	<div id="screen-4" class="screen screen4">
+		<div class="screen-text-promo" data-parallax="scroll" data-image-src="img/screen-4-bg.jpg">
+			<div class="text-left">
+				<h2>Superstition</h2>				
+			</div>
+			<div class="text-center">
+				<h2>The Superstition</h2>				
+			</div>
+			<div class="text-right">
+				<h2>Zephirest</h2>				
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!-- Load Scripts Start -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="libs/parallax-background/parallax.min.js"></script>
+	<script>
+
+		$(document).ready(function(){
+			$("#menu").on("click","a", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+		top = $(id).offset().top;
+		
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
+		});
+	</script>
+</body>
+</html>
